@@ -148,3 +148,22 @@ def main():
         'ex' - logs you out
         'help' - helps a user around the app
                         ""","blue")
+        print(f"At your service, what task would you like to perform?")
+        key_word = input().lower()
+
+        if key_word == 'cc':
+                        print("Save a new credentials")
+                        platform = input("Input the platform: ")
+                        print("\n")
+                        username = input("Input your username: ")
+                        print("\n")
+                        email = input("Input your email: ")
+                        print("\n")
+                        option = input("Would you wish to have Passwordlocker generate a password for you? Y or N ").lower()
+                        if option.startswith("y"):
+                            print()
+                            desired_len = int(input("How long would you like your password to be? Provide number only. "))
+                            password = generate_password(desired_len)
+                        else:
+                            print("\n")
+                            password = getpass("Enter your password: ")
