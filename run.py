@@ -63,3 +63,19 @@ def display_credentials():
     Function that returns all the saved credentials
     """
     return Credentials.display_credentials()
+
+def copy_password(platform):
+    """
+    Function which copies the password of the platform
+    taken as an argument
+    """
+    return Credentials.copy_password(platform)
+
+def generate_password(length):
+    """
+    Function which generates a random password
+    Args:
+        the desired password length
+    """
+    return Credentials.generate_password(length)
+
