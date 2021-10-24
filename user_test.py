@@ -27,3 +27,12 @@ class UserTest(unittest.TestCase):
         """
         self.new_user.save_user()
         self.assertEqual(len(User.user_list),1)
+
+    def test_user_auth(self):
+        """
+        test_user_auth tests case to authenticate the user
+        """
+        self.assertTrue(self.new_user.user_auth("user100","1100"))
+
+if __name__ == "__main__":
+    unittest.main()
