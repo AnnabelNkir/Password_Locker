@@ -167,3 +167,33 @@ def main():
                         else:
                             print("\n")
                             password = getpass("Enter your password: ")
+        
+        save_credentials(create_credentials(platform,username,email,password))
+        print('\n')
+        cprint(f"NEW CREDENTIALS FOR {platform} CREATED!","green",attrs=['bold'])
+        print("_"*50)
+        print('\n')
+        
+    elif key_word == 'dc':
+
+    if display_credentials():
+                            print("HERE ARE YOUR CREDENTIALS")
+                            print('\n')
+
+                            for cred in display_credentials():
+                                cprint(
+                                 f"""
+                                  --------------------------------------------------
+            Platform --- {cred.platform}               
+            Username --- {cred.username}               
+            Email    --- {cred.email}                  
+            Password --- {cred.password}               
+    --------------------------------------------------
+                                ""","magenta"
+                                )
+                                print('\n')
+    else:
+                            print('\n')
+                            cprint("You dont seem to have any credentials saved yet","yellow")
+                            print("_"*50)
+                            print('\n')                            
