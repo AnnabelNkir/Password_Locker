@@ -16,5 +16,14 @@ class User:
         this method appends new object to user_list
         """
         User.user_list.append(self)
-
+@classmethod
+def user_auth(cls,name,pin):
+        """
+        This method returns a boolean True if the username and pin inputted
+        matches those of a user in the user_list
+        """
+        for user in cls.user_list:
+            if user.login_name == name and user.pin == pin:
+                return True
+        return False
    
