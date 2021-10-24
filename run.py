@@ -79,3 +79,72 @@ def generate_password(length):
     """
     return Credentials.generate_password(length)
 
+def main():
+    cprint("""
+             
+    HELLO THERE, WELCOME TO THE PASSWORD LOCKER                                         
+                
+        ""","blue")
+    while True:
+        cprint("""
+        Use the following short codes to manage your account 
+            'lg' - Login 
+            'xx' - Close app
+            ""","blue")
+        print("What would you like to do?")
+        code = input().lower()
+        if code == "lg":
+            print("Do you have an account? Y or N")
+            decision = input().lower()
+
+            if decision.startswith("n"):
+                login_name = input("Enter your username: ")
+                login_pin = getpass("Enter your pin: ")
+                print("Loading ...")
+                time.sleep(1.5)
+                print("\n")
+                cprint("Congratulations!!!, Your account has been created","green",attrs=['bold'])
+                print("Sign into your new account")
+                sign_in_name = input("Enter your username: ")
+                sign_in_pin = getpass("Enter your pin: ")
+                save_user(create_user(login_name,login_pin))
+                if authenticate_user(sign_in_name,sign_in_pin):
+                    print("Please wait...")
+                    time.sleep(1.5)
+                    cprint("SUCCESSFULLY SIGNED IN","green",attrs=['bold'])  
+                    print("\n")
+                    pass
+                else:
+                    print("Please wait...")
+                    time.sleep(1.5)
+                    
+                    print("\n")
+            else:
+                sign_in_name = input("Enter your username: ")
+                sign_in_pin = getpass("Enter your pin: ")
+                if authenticate_user(sign_in_name,sign_in_pin):
+                    print("Please wait...")
+                    time.sleep(1.5)
+                    cprint("SUCCESSFULLY SIGNED IN","green",attrs=['bold'])  
+                    print("\n")
+                    pass
+                else:
+                    print("Please wait...")
+                    time.sleep(1.5)
+                   
+                    print("\n")
+            while True:
+                if authenticate_user(sign_in_name,sign_in_pin):
+                    cprint(
+                        """
+
+          WELCOME TO YOUR PASSWORD LOCKER:
+    Use the following commands to navigate the application:
+        'cc' - enables you to create an a credential
+        'dc' - displays the credentials you have saved
+        'cp' - copies the password of a given credential
+        'fc' - helps you find a credential by its platform name
+        'dl' - deletes a credential
+        'ex' - logs you out
+        'help' - helps a user around the app
+                        ""","blue")
