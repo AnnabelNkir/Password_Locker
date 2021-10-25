@@ -141,7 +141,7 @@ def main():
                    
                     cprint(
                         """
-    O===[====================-
+ 
         
     WELCOME TO YOUR ACCOUNT:
     Use the following commands to navigate the application:
@@ -277,7 +277,7 @@ def main():
         elif code == "xx":
             cprint(
             """
-THANK YOU FOR USING PASSWORD LOCKER; GOOD DAY!!!
+THANK YOU FOR USING PASSWORD LOCKER!!!
                                                                       
             ""","blue")
             break

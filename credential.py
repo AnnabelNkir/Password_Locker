@@ -1,11 +1,12 @@
-import pyperclip
 import string
 import random
-
+import pyperclip
 class Credential:
     """
     a contact class
+
     __init__ method that helps us define properties for our objects.
+
     Args:
     platform: New credential platform name.(str)
     username : New username.(str)
@@ -38,6 +39,7 @@ class Credential:
     def find_by_platform(cls,platform):
         '''
         Method that takes in a platform and returns a credential that matches that name.
+
         Args:
             platform: Name to search for
         Returns :
