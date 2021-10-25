@@ -165,7 +165,7 @@ def main():
                         print("\n")
                         email = input("Input your email: ")
                         print("\n")
-                        option = input("Would you wish to have Vault generate a password for you? Y or N ").lower()
+                        option = input("Would you wish to have Password locker generate a password for you? Y or N ").lower()
                         if option.startswith("y"):
                             print()
                             desired_len = int(input("How long would you like your password to be? Provide number only. "))
