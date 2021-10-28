@@ -21,7 +21,7 @@ def save_user(user):
     user.save_user()
 
 def authenticate_user(username,password):
-    return User.user_auth(username,password)
+    return User(username,password)
 
 def create_credential(platform,username,email,password):
     """
